@@ -208,7 +208,6 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
 
         self.populate()
 
-        self.eventTable.selectionModel().currentRowChanged.connect(self.onEventSelection)
         self.dataTable.hide()
 
         #
@@ -308,6 +307,8 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         cur.execute(q)
         self.eventModel = EventModel(cur)
         self.eventTable.setModel(self.eventModel)
+        
+        self.eventTable.selectionModel().currentRowChanged.connect(self.onEventSelection)
 
         self.eventTable.horizontalHeader().setResizeMode(QHeaderView.Interactive)
 
