@@ -206,8 +206,6 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
             self.idEdit.setEnabled(True)
             self.idEdit.setText(str(selected_feature_id))
 
-        self.populate()
-
         self.dataTable.hide()
 
         #
